@@ -1,0 +1,10 @@
+首页：index/home/
+    空气质量数据：kqzlsj.json
+
+站点查看：
+    应对措施：index/zdckydcs/ydcs_站点ID.json
+        站点ID：与 map/station.json 中站点的 id 对应
+        
+    调度监管：index/zdckddjg
+        报警事件：index/zdckddjg/bjsj_站点ID.json
+        事件追踪：index/zdckddjg/sjzz_站点ID.json

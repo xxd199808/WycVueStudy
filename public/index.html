@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--第三方资源-->
+    <script src="<%= BASE_URL %>r/base/jQuery-1.10.2/jquery-1.10.2.min.js"></script>
+    <!--<script src="<%= BASE_URL %>r/base/layer-v3.0.3/layer.js"></script>-->
+    <!--公司框架资源-->
+    <!--<link type="text/css" rel="stylesheet" href="<%= BASE_URL %>r/wisoft/wiFrame/css/common.css" />-->
+    <!--<script src="<%= BASE_URL %>r/wisoft/wiFrame/common.js"></script>-->
+    <!--项目资源-->
+    <script type="text/javascript">
+        window._WI = {};
+        //window.G_MAP = {};//全局地图接口
+        //window.G_MODULE = {};//全局子舱接口
+    </script>
+    <!-- 地图 js -->
+    <!--<% if(process.env.VUE_APP_PROD === 'true'){ %>
+    <script type="text/javascript" src="map/air.js"></script>
+    <% }else{ %>
+    <script type="text/javascript" src="map/air_demo.js"></script>
+    <% } %>-->
+</head>
+
+<body>
+    <noscript>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>

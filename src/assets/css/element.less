@@ -1,0 +1,39 @@
+@charset "UTF-8";
+// 覆写element样式
+//按钮
+.el-button {
+    //element-ui 问题：按钮字号为12px时（small、mini），图标+文字按钮比文字按钮高1px，以下代码修改按钮中的图标对齐
+    &>[class*=" el-icon-"],
+    &>[class^=el-icon-],
+    .el-icon--right {
+        vertical-align: top;
+    }
+}
+
+//表格字号调整为正文字号
+.el-table--small,
+.el-table__expand-icon {
+    font-size: @s_font;
+}
+
+//设置为默认撑满宽度，需要指定尺寸的特殊处理
+.el-select {
+    width: 100%;
+}
+
+//下拉框和按钮相连时，定义间距
+.com-button:not(:first-child),
+.com-button+.el-button {
+    margin-left: 10px;
+}
+
+//表单
+.el-input.is-disabled .el-input__inner {
+    color: @c_font;
+}
+
+//图片查看
+.el-image-viewer__wrapper {
+    //覆写 element-ui 行内样式，否则可能被弹框遮挡
+    z-index: 30000 !important;
+}

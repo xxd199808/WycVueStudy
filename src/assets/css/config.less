@@ -1,0 +1,171 @@
+//-- 颜色(color)定义 @c_
+@c_bg: #fff; //主内容背景色
+@c_main: #409EFF; //主色：标题、重要信息
+@c_font: #333; //正文文字：表单标题、表单输入域文字
+@c_desfont: #8FDCE2; //描述文字：列表文字、数据说明
+@c_hfont: #FFBE34; //高亮文字
+@c_dfont: #91AEAF; //暗文字：数据项中的日期、数据的单位
+@c_redfont: #F5222D; //红色文字
+@c_greenfont: #52C41A; //绿色文字
+
+//-- 尺寸(size)定义 @s_
+@s_font: 14px;
+
+//--  其他(else)定义 @e_
+@e_active_opacity: .75; //一般元素 :active 时的透明度
+
+.l_pre(@style, @value) {
+    //为 animation, transform, transition 添加前缀
+    //----- 示例 -----
+    //.l_pre(transition, all 1s linear 0s);
+    -webkit-@{style}: @value;
+    -moz-@{style}: @value;
+    -ms-@{style}: @value;
+    @{style}: @value;
+}
+
+.l_keyframes(@name, @content) {
+    //----- 示例 -----
+    //.l_keyframes(aniName, { from{ opacity: 1;} to{ opacity: 0;} });
+    @keyframes @name {
+        @content();
+    }
+
+    @-ms-keyframes @name {
+        @content();
+    }
+
+    @-moz-keyframes @name {
+        @content();
+    }
+
+    @-o-keyframes @name {
+        @content();
+    }
+
+    @-webkit-keyframes @name {
+        @content();
+    }
+}
+
+//清除浮动
+.l_clear() {
+    //----- 示例 -----
+    //.l_clear()
+    //overflow: hidden;
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+
+.l_nowrap() {
+    //禁止换行
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 省略号 */
+    word-break: normal;
+    /* 防止被父级 wordwrap 样式影响 */
+    word-wrap: normal;
+}
+
+.l_wordwrap() {
+    //强制换行
+    white-space: normal;
+    word-break: break-all;
+    /*支持IE，chrome，FF不支持*/
+    word-wrap: break-word;
+    /*支持IE，chrome，FF*/
+}
+
+.l_noselect() {
+    //禁止选中
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+//placeholder 颜色
+.l_placeholder(@color: #ccc) {
+
+    //----- 示例 -----
+    //input{
+    //    .l_placeholder(#fff);
+    //}
+    //WebKit browsers
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+
+    //Mozilla Firefox 19+
+    &::-moz-placeholder {
+        color: @color;
+    }
+
+    //Internet Explorer 10+
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+}
+
+//取消下拉框默认样式
+.l_appearance_none() {
+    appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+//隐藏滚动条
+.l_noscrollbar() {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+//超过@line行文字隐藏
+.l_clamp(@line: 1) {
+    display: -webkit-box;
+    overflow: hidden;
+    .l_wordwrap();
+    -webkit-line-clamp: @line;
+    -webkit-box-orient: vertical;
+}
+
+//线性渐变
+.l_linear_gradient(@cstart, @cend, @direction: to bottom) {
+    //----- 示例 -----
+    //.l_linear_gradient(#f00, #ff0, to bottom);
+    //@direction 用角度值指定渐变的方向（或角度）:to top;to bottom;to bottom right;45deg
+    background-image: linear-gradient(@direction, @cstart, @cend);
+    background-image: -ms-linear-gradient(@direction, @cstart, @cend);
+    background-image: -moz-linear-gradient(@direction, @cstart, @cend);
+    background-image: -o-linear-gradient(@direction, @cstart, @cend);
+    //background-image: -webkit-linear-gradient(@direction, @cstart, @cend);//webkit 需要将 to bottom 改为 bottom
+}
+
+//径向渐变：position 为 center，shape 为 ellipse
+.l_radial_gradient(@cstart, @cend, @positon: center center, @shape-size: ellipse) {
+    //----- 示例 -----
+    //.l_radial_gradient(#f00, #ff0);
+    //.l_radial_gradient(#005a7f, #ff0, center center, circle cover);
+    //background-color: @cie8;//ie8的兼容在页面中自行处理
+    background-image: radial-gradient(@positon, @shape-size, @cstart, @cend);
+    background-image: -ms-radial-gradient(@positon, @shape-size, @cstart, @cend);
+    background-image: -moz-radial-gradient(@positon, @shape-size, @cstart, @cend);
+    background-image: -o-radial-gradient(@positon, @shape-size, @cstart, @cend);
+    background-image: -webkit-radial-gradient(@positon, @shape-size, @cstart, @cend);
+}

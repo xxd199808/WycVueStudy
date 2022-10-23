@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+//字体文件请改为英文，中文在现场的部分服务器中不被识别
+//@font-face {
+//    font-family: "zzgflht";
+//    src: url("../font/zzgflht.otf");
+//}
+
+body,
+html,
+div,
+blockquote,
+img,
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+a,
+fieldset,
+button,
+input,
+select,
+textarea,
+th,
+td,
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 14px/1.5 "pingfang SC", "\5FAE\8F6F\96C5\9ED1", arial, verdana, sans-serif;
+    color: @c_main;
+}
+ul,
+ol {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+}
+iframe {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    background: #F2F4FB;
+}
+
+// 公共样式
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    &>.flex1 {
+        width: 0;
+    }
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    &>.flex1 {
+        height: 0;
+    }
+}
+.flex1 {
+    flex: 1;
+    overflow: auto;
+}
+//通用容器
+//<div class="panel">
+//    <div class="panel-head">
+//        <div class="panel-head-l"><div class="panel-icon _info"></div>标题</div>
+//        <div class="panel-head-r">更多</div>
+//    </div>
+//    <div class="panel-body">
+//        内容
+//    </div>
+//</div>
+.panel {
+    background: #fff;
+    border-radius: 4px;
+}
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 4px 4px 0 0;
+    .l_linear_gradient(#fff, #F5F5F5, to bottom);
+}
+.panel-head-l {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.panel-body {
+    padding: 10px;
+}
+.panel-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background: center no-repeat;
+    //background-size: 22px;
+}
+//容器间距
+.panel+.panel {
+    margin-top: 10px;
+}
+.flex-row>.panel+.panel {
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+//覆写 element 样式
+@import './element.less';
+//覆写 wiv 样式
+@import './wiv.less';

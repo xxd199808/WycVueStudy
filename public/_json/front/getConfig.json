@@ -1,0 +1,16 @@
+{
+    "success": true,
+    "code": 200,
+    "msg": "调用成功",
+    "_desc": "获取系统配置的请求",
+    "data": {
+        "server_type": "ht",
+        "basePath": "http://47.92.113.152:7913/hjyj/",
+        "sCasLogin": "http://192.10.110.175:9093/cas/login?clientId=9a4e68a6-5258-48c1-b554-9ca250317ade",
+        "sAmapKey": "",
+        "link": [
+            { "name": "stglzhzx", "url": "http://59.211.137.69:16680/stglzhzx/stglzhzx/index.html#/" },
+            { "name": "mhqy", "url": "http://222.217.240.71:18084/mhqy/mhqy/index.html#" }
+        ]
+    }
+}
