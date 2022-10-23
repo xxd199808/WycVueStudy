@@ -1,40 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import index from './views/index/index.vue';
-import login from './views/index/login.vue';
-//import mode0view0 from './views/mod0/view0.vue';
-//import mode1view0 from './views/mod1/view0.vue';
-
 const routes = [{
         path: '/',
         name: 'index',
         component: index,
-        //children: [
-        //    {
-        //        path: 'view0',
-        //        component: mode0view0
-        //    },
-        //    {
-        //        path: 'view0',
-        //        name: 'mod1view0',
-        //        component: mode1view0
-        //    },
-        //]
-    },
-    //{
-    //    path: '/mod0',
-    //    name: 'mod0',
-    //    component: index,
-    //    children: [
-    //    {
-    //        path: 'view0',
-    //        component: mode0view0
-    //    }]
-    //},
-    {
-        path: '/login',
-        name: 'login',
-        component: login,
     },
     {
         path: '*',
