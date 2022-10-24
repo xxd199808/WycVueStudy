@@ -79,11 +79,13 @@ export default {
     background-color: #1c425c;
 }
 .pollute-name {
-    font-size: 18px;
     color: #fff;
+    font-size: 18px;
+    font-family: 'digital';
 }
 .pollute-val {
-    font-size: 24px;
     color: #67b243;
+    font-size: 40px;
+    font-family: 'digital';
 }
 </style>
